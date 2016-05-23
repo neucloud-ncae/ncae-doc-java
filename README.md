@@ -16,5 +16,5 @@
 - 本平台包含常用的生成工具，允许您在服务器上执行生成操作。这些工具包括：`ant` `maven2` `gradle`。
 - 您可以在应用部署时指定外部数据库连接，该配置将以环境变量的形式传入应用服务器，您可以使用 `System.getenv("JDBC_CONNECTION_STRING")` 读取该环境变量。
 - 如果您要在部署时编译 Java 类并在您环境中运行其他生成构建的命令，请在应用程序源包中包含一个 `Buildfile` 文件（文件名区分大小写）。
-- 本平台通过 Supervisor 服务来运行并守护您所部署的应用，您需要在上传的代码包或项目路径中包含一个 `Procfile` 文件（文件名区分大小写）来告知 Supervisor 您的应用运行所需执行的启动命令。应用所监听的端口可以在部署时指定，该配置将以变量的形式传入您的 Java 应用，您可以通过在应用程序代码中调用 `System.getProperty("PORT")` 访问此变量。
+- 本平台通过 Supervisor 服务来运行并守护您所部署的应用，您需要在上传的代码包或项目路径中包含一个 `Procfile` 文件（文件名区分大小写）来告知 Supervisor 您的应用运行所需执行的启动命令。应用所监听的端口可以在部署时指定，该配置将以环境变量的形式传入 Supervisor 运行环境，您可以通过在应用程序代码中调用 `System.getenv("PORT")` 访问此变量。
 - 关于 `Buildfile` 和 `Procfile` 的使用方法，请参见我们提供的[**演示代码**](https://github.com/neucloud-ncae/ncae-example-java)。
